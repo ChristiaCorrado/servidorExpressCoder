@@ -7,10 +7,6 @@ const PORT = 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(`/api/productos`, routerAllProductos);
-
-app.use(`/api/productos`, productoID);
-
 
 const server = app.listen(PORT, () => {
   
@@ -20,3 +16,9 @@ const server = app.listen(PORT, () => {
 server.on("error", (req, res) => {
   console.log(`hay un error en ${error}`);
 });
+
+
+app.set('view engine', 'ejs')
+
+app.use(`/api/productos`, routerAllProductos);
+app.use(`/api/productos`, productoID);

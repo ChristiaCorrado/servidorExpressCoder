@@ -1,0 +1,17 @@
+<% if(allProducts.length !== 0) { %>
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr style="color: yellow;"> <th>ID</th><th>Nombre</th> <th>Precio</th> <th>Foto</th> </tr>
+           <% for (const product in allProducts ) { %>
+            <tr>
+                <td> <%= allProducts[product].id %> </td>
+                <td> <%= allProducts[product].title %> </td>
+                <td> <%= allProducts[product].price %> </td>
+                <td> <img src="<%= allProducts[product].thumbnail %> " alt="<%= allProducts[product].id %>" style="width: 50"> </td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+<% } else{ %> 
+   <h3 style="color: black">no existen datos</h3>
+<% };%>

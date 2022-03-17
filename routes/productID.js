@@ -48,7 +48,8 @@ productoID.put('/:num1', (req, res) => {
 productoID.delete('/:num1', (req, res) => {
 
     deleteProductID(req.params.num1);
-    res.send(allProducts);
+    
+    res.render('formulario', { allProducts })
 });
 
 module.exports = productoID ;

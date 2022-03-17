@@ -18,13 +18,14 @@ const print = () => {
 
 
 routerAllProductos.get('/', (req, res) => {
-  res.json(print());
+  allProducts = print()
+  res.render('formulario', { allProducts })
 });
 
 routerAllProductos.post("/", (req, res) => {
   console.log(req.body);
   product.save(req.body);
-  res.json(`Producto agregado`);
+  res.render('formulario', { allProducts })
 });
 
 module.exports = routerAllProductos;
