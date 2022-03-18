@@ -17,9 +17,13 @@ const print = () => {
 };
 
 
+
+
 routerAllProductos.get('/', (req, res) => {
   allProducts = print()
-  res.render('formulario', { allProducts })
+
+  res.render('formulario', { allProducts }) 
+  
 });
 
 routerAllProductos.post("/", (req, res) => {

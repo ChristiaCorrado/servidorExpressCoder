@@ -20,5 +20,5 @@ server.on("error", (req, res) => {
 
 app.set('view engine', 'ejs')
 
-app.use(`/api/productos`, routerAllProductos);
-app.use(`/api/productos`, productoID);
+app.use(`/productos`, routerAllProductos);
+
