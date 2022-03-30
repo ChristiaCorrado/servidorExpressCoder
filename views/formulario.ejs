@@ -1,6 +1,4 @@
-<header>
-  <%- include('./partials/encabezado.ejs'); %>
-</header>
+<%- include('./partials/encabezado.ejs'); %>
 <body>
 <div class="container mt-3">
   <div class="jumbotron">
@@ -33,7 +31,12 @@
 
     <h2 style="color: crimson">Vista de productos</h2>
     <%- include('./partials/tablaProductos.ejs', {allProducts}) %>
+    <div>
+      <%- include('./partials/chat.ejs')  %> 
+    </div>
+    
   </div>
 </div>
+
 </body>
 <%- include('./partials/pie.ejs'); %>
