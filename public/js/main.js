@@ -2,10 +2,13 @@ const socket = io.connect();
 
 
 function render(data) {
+    let data=  new Date().toLocaleString()
+
     const html = data.map((elem, index) => {
-        return(`<div>
-            <strong>${elem.author}</strong>:
-            <em>${elem.text}</em> </div>`)
+        return(`<div class="d-flex">
+            <strong style="color: blue">${elem.author}</strong>:
+            <div>${data}</div>
+            <em style="color: green">${elem.text}</em> </div>`)
     }).join(" ");
     document.getElementById('messages').innerHTML = html;
 }
@@ -21,3 +24,4 @@ function addMessage(e) {
     socket.emit('new-message', mensaje);
     return false;
 }
+

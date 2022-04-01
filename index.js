@@ -20,19 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-const server = app.listen(PORT, () => {
-  
-  console.log(`servidor iniciado en puerto ${server.address().port}`);
-});
-
-server.on("error", (req, res) => {
-  console.log(`hay un error en ${error}`);
-});
 
 
 app.set('view engine', 'ejs')
 
-app.use(`/productos`, routerAllProductos);
+app.use(`/home`, routerAllProductos);
 
 const mensajes = []
 
@@ -42,9 +34,13 @@ const messages = [
   { author: "Ana", text: "¡Genial!" }
 ];
 
-httpServer.listen(3000, ()=> {console.log('SERVER ON');})
+//httpServer.listen(3000, ()=> {console.log('SERVER ON');})
+const connectedServer = httpServer.listen(PORT, () => {
+  console.log(`Servidor http con socket escuchando en el puerto ${connectedServer.address().port}`)
+})
+connectedServer.on('error',(error) => {console.log(`error: ${error.message}`)}) 
 
-io.on('connect',(socket) => {
+io.on('connection',(socket) => {
   console.log('SE CONECTO UN USUARIO');
   socket.emit('messages', messages)
     
@@ -59,8 +55,7 @@ io.on('connect',(socket) => {
     io.sockets.emit('messages', messages);
 });
 
-  
-  
+
 })
 
 

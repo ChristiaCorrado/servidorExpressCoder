@@ -8,14 +8,26 @@
     "node": "^17.5.0",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
   },
   "devDependencies": {},
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack ./a1.js ./a2.js ./a3.js"
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristiaCorrado/servidorExpressCoder.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ChristiaCorrado/servidorExpressCoder/issues"
+  },
+  "homepage": "https://github.com/ChristiaCorrado/servidorExpressCoder#readme",
   "description": ""
 }
