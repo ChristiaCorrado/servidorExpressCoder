@@ -5,6 +5,7 @@ const { Server : IOServer, Socket } = require("socket.io")
 const { Server: HttpServer } = require("http")
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
+
 const routerAllProductos = require("./routes/allProducts");
 const productoID = require("./routes/productID")
 
