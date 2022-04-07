@@ -1,17 +1,36 @@
 <% if(allProducts.length !== 0) { %>
-    <div class="table-responsive">
-        <table class="table table-dark">
-            <tr style="color: yellow;"> <th>ID</th><th>Nombre</th> <th>Precio</th> <th>Foto</th> </tr>
-           <% for (const product in allProducts ) { %>
-            <tr>
-                <td> <%= allProducts[product].id %> </td>
-                <td> <%= allProducts[product].title %> </td>
-                <td> <%= allProducts[product].price %> </td>
-                <td> <img class="col-2" src="<%= allProducts[product].thumbnail %> " alt="<%= allProducts[product].id %>" > </td>
-            </tr>
-            <% } %>
-        </table>
-    </div>
-<% } else{ %> 
-   <h3 style="color: black">no existen datos</h3>
-<% };%> 
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            
+                
+            <div class="mb-5 d-flex align-item-center justify-content-center"> >
+                <% for (const product in allProducts ) { %>
+                    <div class="card m-2">
+                        <!-- Product image-->
+                        <img class="card-img-top" style="width: 150px;" src="<%= allProducts[product].thumbnail %>" alt="..."  />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder"><%= allProducts[product].title %></h5>
+                                <!-- Product price-->
+                                <%= allProducts[product].price %>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="">View options</a></div>
+                        </div>
+                    </div>
+                    <% } %>
+                    
+                    <% } else{ %> 
+                        <h3 style="color: black">no existen datos</h3>
+                     <% };%> 
+                </div>
+            
+        </div>
+    </section>
+    
+        

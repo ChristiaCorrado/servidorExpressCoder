@@ -36,20 +36,34 @@ const deleteProductID = (idBuscado) => {
     return productoBorrado;
 };
 
+const actualizarProductos = (idBase, actualizacion) => {
+  product.getAll().then(function (res) {
+    allProducts = res;
+    console.log(allProducts);
+    const index = allProducts.findIndex(object => {
+      return object.id == idBase;
+      });
+    
+    allProducts[index].price = actualizacion.price
+    
+    product.createArchivo(allProducts)
+  });
+};
 
-productoID.get('/:num1', (req, res) => {
+
+productoID.get('/productos/:num1', (req, res) => {
   res.json(findProduct(req.params.num1) );
 });
 
-productoID.put('/:num1', (req, res) => {
-    res.json(findProduct(req.params.num1) );
+productoID.put('/productos/:num1', (req, res) => {
+    res.json(actualizarProductos(req.params.num1,req.body) );
   });
 
-productoID.delete('/:num1', (req, res) => {
+productoID.delete('/productos/:num1', (req, res) => {
 
     deleteProductID(req.params.num1);
     
-    res.render('formulario', { allProducts })
+
 });
 
 module.exports = productoID ;

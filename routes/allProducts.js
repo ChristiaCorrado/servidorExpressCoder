@@ -19,17 +19,25 @@ const print = () => {
 
 
 
-routerAllProductos.get('/', (req, res) => {
+routerAllProductos.get('/productos', (req, res) => {
   allProducts = print()
 
-  res.render('formulario', { allProducts }) 
+<<<<<<< HEAD
+  res.render('allProducts', { allProducts }) 
+=======
+  res.render(allProducts) 
+>>>>>>> 0b2d600a84420c7f826d0bfa07df9fb7b96d5c4d
   
 });
 
-routerAllProductos.post("/", (req, res) => {
+routerAllProductos.post("/productos", (req, res) => {
   console.log(req.body);
   product.save(req.body);
-  res.render('formulario', { allProducts })
+<<<<<<< HEAD
+  res.render('allProducts', { allProducts })
+=======
+  res.render()
+>>>>>>> 0b2d600a84420c7f826d0bfa07df9fb7b96d5c4d
 });
 
 module.exports = routerAllProductos;
