@@ -19,17 +19,6 @@ const print = () => {
 
 
 
-routerAllProductos.get('/productos', (req, res) => {
-  allProducts = print()
 
-  res.render(allProducts) 
-  
-});
-
-routerAllProductos.post("/productos", (req, res) => {
-  console.log(req.body);
-  product.save(req.body);
-  res.render()
-});
 
 module.exports = routerAllProductos;

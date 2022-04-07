@@ -26,10 +26,6 @@ app.use(express.json());
 
 app.set('view engine', 'ejs')
 
-app.use(`/api`, routerAllProductos);
-app.use(`/api`, productoID);
-app.use(`/api`,cart)
-
 const mensajes = []
 
 const messages = [
