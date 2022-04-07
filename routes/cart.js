@@ -9,7 +9,7 @@ const cart = express.Router();
 let allProducts
 let productoFiltrado = []
 let productoBorrado = []
-let allCart = []
+let allCart = [] 
 
 const crearCart = (cart) => {
     id = Math.floor(Math.random() * (100-1 + 1)) + 1;
