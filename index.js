@@ -8,6 +8,7 @@ const io = new IOServer(httpServer)
 
 const routerAllProductos = require("./routes/allProducts");
 const productoID = require("./routes/productID")
+const cart = require("./routes/cart")
 
 app.use(express.static('./public'))
 
@@ -25,7 +26,9 @@ app.use(express.json());
 
 app.set('view engine', 'ejs')
 
-app.use(`/home`, routerAllProductos);
+app.use(`/api`, routerAllProductos);
+app.use(`/api`, productoID);
+app.use(`/api`,cart)
 
 const mensajes = []
 

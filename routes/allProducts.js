@@ -19,17 +19,17 @@ const print = () => {
 
 
 
-routerAllProductos.get('/', (req, res) => {
+routerAllProductos.get('/productos', (req, res) => {
   allProducts = print()
 
-  res.render('formulario', { allProducts }) 
+  res.render(allProducts) 
   
 });
 
-routerAllProductos.post("/", (req, res) => {
+routerAllProductos.post("/productos", (req, res) => {
   console.log(req.body);
   product.save(req.body);
-  res.render('formulario', { allProducts })
+  res.render()
 });
 
 module.exports = routerAllProductos;
